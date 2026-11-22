@@ -1,6 +1,6 @@
 # EnvLens
 
-[English](README.en.md) · [使用手册](docs/USAGE.zh-CN.md) · [开发与测试](docs/DEVELOPMENT.md)
+[English](README.en.md) · [使用手册](docs/USAGE.zh-CN.md) · [开发与测试](docs/DEVELOPMENT.md) · [下载 Windows 版](https://github.com/guofudamo2007-lab/EnvLens/releases/latest)
 
 EnvLens 是 Windows 上的本地 AI 环境诊断工具。选中项目实际使用的 Python，运行一次体检，就能看到 Windows、NVIDIA 驱动、PyTorch 和 Ollama 各自观察到了什么。展开检查项可以查看原始观测值、原因的置信程度、复检命令和官方资料。
 

@@ -1,6 +1,6 @@
 # EnvLens
 
-[简体中文](README.md) · [User guide](docs/USAGE.md) · [Development and testing](docs/DEVELOPMENT.md)
+[简体中文](README.md) · [User guide](docs/USAGE.md) · [Development and testing](docs/DEVELOPMENT.md) · [Windows downloads](https://github.com/guofudamo2007-lab/EnvLens/releases/latest)
 
 EnvLens diagnoses local AI environments on Windows. Choose the Python executable your project actually starts, run a scan, then inspect the observations behind each finding. The desktop app and command-line scanner share the same Rust adapters and deterministic rules.
 

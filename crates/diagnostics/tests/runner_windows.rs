@@ -1,11 +1,24 @@
 #![cfg(windows)]
-use envlens_core::runner::{run, system32, Fault, LIMIT};
+use envlens_core::runner::{run, system32, Fault, Output, LIMIT};
 use std::{
     path::Path,
     time::{Duration, Instant},
 };
 fn ps() -> std::path::PathBuf {
     system32(r"WindowsPowerShell\v1.0\powershell.exe").unwrap()
+}
+fn run_cmd(command: &str) -> Result<Output, Fault> {
+    run(
+        &system32("cmd.exe").unwrap(),
+        &["/d", "/q", "/c", command],
+        Duration::from_secs(8),
+    )
+}
+fn assert_output_limit(redirect: &str) {
+    let line = "x".repeat(1024);
+    let lines = LIMIT / line.len() + 1;
+    let command = format!("(for /l %i in (1,1,{lines}) do @echo {line}){redirect}");
+    assert_eq!(run_cmd(&command).err(), Some(Fault::OutputLimit));
 }
 #[test]
 fn missing_binary_is_reported() {
@@ -48,34 +61,15 @@ fn timeout_terminates_the_job() {
 }
 #[test]
 fn oversized_stdout_is_bounded() {
-    let r = run(
-        &ps(),
-        &["-NoProfile", "-Command", "[Console]::Write(('a' * 300000))"],
-        Duration::from_secs(8),
-    );
-    assert!(matches!(r, Err(Fault::OutputLimit)));
+    assert_output_limit("");
 }
 #[test]
 fn oversized_stderr_is_bounded_too() {
-    let r = run(
-        &ps(),
-        &[
-            "-NoProfile",
-            "-Command",
-            "[Console]::Error.Write(('a' * 300000))",
-        ],
-        Duration::from_secs(8),
-    );
-    assert!(matches!(r, Err(Fault::OutputLimit)));
+    assert_output_limit(" 1>&2");
 }
 #[test]
 fn nonzero_exit_is_not_success() {
-    let r = run(
-        &ps(),
-        &["-NoProfile", "-Command", "exit 7"],
-        Duration::from_secs(8),
-    )
-    .unwrap();
+    let r = run_cmd("exit /b 7").unwrap();
     assert_eq!(r.code, Some(7));
     assert!(r.stdout.len() <= LIMIT);
 }

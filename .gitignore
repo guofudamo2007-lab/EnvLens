@@ -1,0 +1,9 @@
+.work/
+release/
+node_modules/
+dist/
+target/
+src-tauri/gen/
+*.local
+*.log
+__pycache__/

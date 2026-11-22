@@ -1,0 +1,7 @@
+{
+  "$schema":"../gen/schemas/desktop-schema.json",
+  "identifier":"main-window",
+  "description":"Read progress from the local diagnostic service",
+  "windows":["main"],
+  "permissions":["core:event:allow-listen","core:event:allow-unlisten"]
+}

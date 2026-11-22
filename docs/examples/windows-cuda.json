@@ -1,0 +1,513 @@
+{
+  "schema_version": 1,
+  "id": "41354c91-8eec-4dba-94b6-e5685e88bc5c",
+  "started_at": "2026-11-22T14:43:53.311Z",
+  "duration_ms": 9642,
+  "interpreter": "<python.exe>",
+  "project": null,
+  "redacted": true,
+  "checks": [
+    {
+      "id": "system.os",
+      "group": "system",
+      "title": {
+        "zh": "操作系统",
+        "en": "Operating system"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已读取系统版本与架构。",
+        "en": "Read the OS version and architecture."
+      },
+      "evidence": [
+        {
+          "key": "os",
+          "value": "Windows 11 Home China",
+          "private": false
+        },
+        {
+          "key": "version",
+          "value": "10.0.26200.9974",
+          "private": false
+        },
+        {
+          "key": "architecture",
+          "value": "x64",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "system.cpu",
+      "group": "system",
+      "title": {
+        "zh": "处理器",
+        "en": "Processor"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已读取 CPU 型号和逻辑处理器数量。",
+        "en": "Read CPU model and logical processor count."
+      },
+      "evidence": [
+        {
+          "key": "cpu",
+          "value": "AMD Ryzen 9 8945HX with Radeon Graphics",
+          "private": false
+        },
+        {
+          "key": "threads",
+          "value": "32",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "system.memory",
+      "group": "system",
+      "title": {
+        "zh": "物理内存",
+        "en": "Physical memory"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "采样时的系统可见内存。",
+        "en": "System-visible memory at scan time."
+      },
+      "evidence": [
+        {
+          "key": "total_mib",
+          "value": "32560",
+          "private": false
+        },
+        {
+          "key": "available_mib",
+          "value": "10858",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "gpu.adapters",
+      "group": "gpu",
+      "title": {
+        "zh": "显示适配器",
+        "en": "Display adapters"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "Windows 枚举到以下显示设备。",
+        "en": "Windows enumerated these display devices."
+      },
+      "evidence": [
+        {
+          "key": "adapter",
+          "value": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "private": false
+        },
+        {
+          "key": "windows_driver",
+          "value": "32.0.16.1714",
+          "private": false
+        },
+        {
+          "key": "nvidia_detected",
+          "value": "true",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "gpu.driver",
+      "group": "gpu",
+      "title": {
+        "zh": "NVIDIA 驱动与显存",
+        "en": "NVIDIA driver and VRAM"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "nvidia-smi 已与驱动通信。",
+        "en": "nvidia-smi communicated with the driver."
+      },
+      "evidence": [
+        {
+          "key": "nvidia_smi",
+          "value": "<private>",
+          "private": true
+        },
+        {
+          "key": "gpu",
+          "value": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "private": false
+        },
+        {
+          "key": "driver",
+          "value": "617.14",
+          "private": false
+        },
+        {
+          "key": "vram_mib",
+          "value": "8151",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "python.discovery",
+      "group": "python",
+      "title": {
+        "zh": "解释器发现",
+        "en": "Interpreter discovery"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已枚举当前范围内的解释器。",
+        "en": "Enumerated interpreters within the current scope."
+      },
+      "evidence": [
+        {
+          "key": "candidates",
+          "value": "3",
+          "private": false
+        },
+        {
+          "key": "launcher",
+          "value": "<private>",
+          "private": true
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "python.runtime",
+      "group": "python",
+      "title": {
+        "zh": "当前解释器",
+        "en": "Selected interpreter"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "选定解释器已启动并返回自身路径。",
+        "en": "The selected interpreter started and reported its executable."
+      },
+      "evidence": [
+        {
+          "key": "requested",
+          "value": "<python.exe>",
+          "private": true
+        },
+        {
+          "key": "sys.executable",
+          "value": "<python.exe>",
+          "private": true
+        },
+        {
+          "key": "python",
+          "value": "3.14.6",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "python.env",
+      "group": "python",
+      "title": {
+        "zh": "虚拟环境",
+        "en": "Environment isolation"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已识别环境类型与基础解释器目录。",
+        "en": "Identified the environment type and the base interpreter directory."
+      },
+      "evidence": [
+        {
+          "key": "environment",
+          "value": "venv",
+          "private": false
+        },
+        {
+          "key": "sys.prefix",
+          "value": "<private>",
+          "private": true
+        },
+        {
+          "key": "sys.base_prefix",
+          "value": "<private>",
+          "private": true
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "python.pip",
+      "group": "python",
+      "title": {
+        "zh": "pip 可用性",
+        "en": "pip availability"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "此解释器可以启动 pip。",
+        "en": "This interpreter can launch pip."
+      },
+      "evidence": [
+        {
+          "key": "pip",
+          "value": "26.1.2",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "python.deps",
+      "group": "python",
+      "title": {
+        "zh": "依赖一致性",
+        "en": "Dependency consistency"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "pip check 未报告依赖冲突。",
+        "en": "pip check reported no broken requirements."
+      },
+      "evidence": [
+        {
+          "key": "pip_check_exit",
+          "value": "0",
+          "private": false
+        },
+        {
+          "key": "pip",
+          "value": "26.1.2",
+          "private": false
+        },
+        {
+          "key": "torch",
+          "value": "2.11.0+cu128",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "torch.install",
+      "group": "torch",
+      "title": {
+        "zh": "PyTorch 安装",
+        "en": "PyTorch installation"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "当前解释器成功导入 PyTorch。",
+        "en": "The selected interpreter imported PyTorch."
+      },
+      "evidence": [
+        {
+          "key": "torch",
+          "value": "2.11.0+cu128",
+          "private": false
+        },
+        {
+          "key": "sys.executable",
+          "value": "<python.exe>",
+          "private": true
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "torch.cuda",
+      "group": "torch",
+      "title": {
+        "zh": "PyTorch CUDA 运行时",
+        "en": "PyTorch CUDA runtime"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "PyTorch 可枚举 CUDA 设备。",
+        "en": "PyTorch can enumerate CUDA devices."
+      },
+      "evidence": [
+        {
+          "key": "torch.version.cuda",
+          "value": "12.8",
+          "private": false
+        },
+        {
+          "key": "torch.cuda.is_available",
+          "value": "true",
+          "private": false
+        },
+        {
+          "key": "device_count",
+          "value": "1",
+          "private": false
+        },
+        {
+          "key": "device_name",
+          "value": "NVIDIA GeForce RTX 5070 Laptop GPU",
+          "private": false
+        },
+        {
+          "key": "nvidia_driver",
+          "value": "617.14",
+          "private": false
+        },
+        {
+          "key": "nvidia_smi",
+          "value": "ok",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "torch.smoke",
+      "group": "torch",
+      "title": {
+        "zh": "GPU 张量运算",
+        "en": "GPU tensor operation"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "首个 CUDA 设备完成单元素加法并读回 2。",
+        "en": "The first CUDA device returned 2 from one-element addition."
+      },
+      "evidence": [
+        {
+          "key": "device",
+          "value": "cuda:0",
+          "private": false
+        },
+        {
+          "key": "result",
+          "value": "2",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "ollama.install",
+      "group": "ollama",
+      "title": {
+        "zh": "Ollama 程序",
+        "en": "Ollama installation"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已读取本地 CLI 版本。",
+        "en": "Read the local CLI version."
+      },
+      "evidence": [
+        {
+          "key": "executable",
+          "value": "<private>",
+          "private": true
+        },
+        {
+          "key": "cli_version",
+          "value": "0.40.17",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "ollama.process",
+      "group": "ollama",
+      "title": {
+        "zh": "Ollama 进程",
+        "en": "Ollama process"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "检测到本机 Ollama 进程。",
+        "en": "An Ollama process was observed."
+      },
+      "evidence": [
+        {
+          "key": "running",
+          "value": "true",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "ollama.api",
+      "group": "ollama",
+      "title": {
+        "zh": "本地服务端点",
+        "en": "Local service endpoint"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "默认回环端点返回了服务版本。",
+        "en": "The default loopback endpoint returned a service version."
+      },
+      "evidence": [
+        {
+          "key": "server_version",
+          "value": "0.40.17",
+          "private": false
+        },
+        {
+          "key": "endpoint",
+          "value": "127.0.0.1:11434/api/version",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "ollama.models",
+      "group": "ollama",
+      "title": {
+        "zh": "本地模型列表",
+        "en": "Local model list"
+      },
+      "status": "ok",
+      "summary": {
+        "zh": "已读取本地模型清单。",
+        "en": "Read the local model list."
+      },
+      "evidence": [
+        {
+          "key": "model_count",
+          "value": "0",
+          "private": false
+        },
+        {
+          "key": "endpoint",
+          "value": "127.0.0.1:11434/api/tags",
+          "private": false
+        }
+      ],
+      "finding": null
+    },
+    {
+      "id": "ollama.inference",
+      "group": "ollama",
+      "title": {
+        "zh": "模型推理",
+        "en": "Model inference"
+      },
+      "status": "skipped",
+      "summary": {
+        "zh": "本次体检未加载模型或执行推理。",
+        "en": "The scan did not load a model or run inference."
+      },
+      "evidence": [],
+      "finding": null
+    }
+  ]
+}

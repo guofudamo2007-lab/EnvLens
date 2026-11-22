@@ -1,0 +1,10 @@
+name: Feature request / 功能建议
+description: Suggest a diagnostic or workflow improvement / 建议新的诊断或交互
+body:
+  - type: textarea
+    id: problem
+    attributes: {label: "What do you need to diagnose? / 想解决什么问题？"}
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes: {label: "Available evidence and desired outcome / 可用证据与期望结果"}

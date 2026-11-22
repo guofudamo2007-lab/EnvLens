@@ -1,0 +1,4 @@
+Installed Pythons found by Launcher for Windows
+ -3.8-64        D:\AI Tools\Py38\python.exe
+ -3.12-64       C:\Local\Python312\python.exe*
+ -V:3.13        C:\Local\Python313\python.exe

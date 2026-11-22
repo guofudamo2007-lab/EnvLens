@@ -1,0 +1,19 @@
+name: Diagnosis / 诊断问题
+description: Report an incorrect finding or an incomplete probe / 反馈误判或探针失败
+title: "[Diagnosis] "
+body:
+  - type: input
+    id: version
+    attributes: {label: "EnvLens and Windows versions / 软件与系统版本"}
+    validations: {required: true}
+  - type: textarea
+    id: reproduce
+    attributes: {label: "Target and steps / 目标环境与复现步骤", description: "Include interpreter type and how you selected it."}
+    validations: {required: true}
+  - type: textarea
+    id: observed
+    attributes: {label: "Expected and observed / 预期与实际结果"}
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes: {label: "Redacted evidence / 脱敏证据", description: "Paste a redacted summary or attach a reviewed export. Omit credentials and private paths."}

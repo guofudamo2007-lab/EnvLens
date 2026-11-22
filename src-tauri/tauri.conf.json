@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "EnvLens",
+  "version": "0.1.1",
+  "identifier": "dev.envlens.localdiagnostics",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devUrl": "http://127.0.0.1:1420",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{"label":"main","title":"EnvLens","width":1230,"height":810,"minWidth":780,"minHeight":560,"center":true}],
+    "security": {
+      "csp":"default-src 'self'; script-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self' ipc: http://ipc.localhost; object-src 'none'; frame-src 'none'; base-uri 'none'",
+      "devCsp":"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost ws://127.0.0.1:1420; object-src 'none'; frame-src 'none'; base-uri 'none'"
+    }
+  },
+  "bundle": {
+    "active": true, "resources": {"../public/THIRD-PARTY-NOTICES.txt":"THIRD-PARTY-NOTICES.txt"}, "targets": ["nsis"], "category": "DeveloperTool", "icon":["icons/icon.ico"],
+    "shortDescription":"Local AI environment diagnostics",
+    "windows": {"nsis":{"installMode":"currentUser","languages":["SimpChinese","English"],"displayLanguageSelector":true}}
+  }
+}
